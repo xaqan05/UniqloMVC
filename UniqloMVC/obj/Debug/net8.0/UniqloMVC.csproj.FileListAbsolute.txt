@@ -223,3 +223,4 @@ C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\ref\Un
 C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\UniqloMVC.RazorAssemblyInfo.cache
 C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\UniqloMVC.RazorAssemblyInfo.cs
 C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\UniqloMVC.staticwebassets.runtime.json
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\UniqloMVC.sourcelink.json
