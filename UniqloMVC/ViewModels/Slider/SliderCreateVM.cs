@@ -3,7 +3,7 @@ using UniqloMVC.Models;
 
 namespace UniqloMVC.ViewModels.Slider
 {
-    public class SliderCreateVM : BaseEntity
+    public class SliderCreateVM
     {
         [MaxLength(32, ErrorMessage ="Title must be less than 32"), Required(ErrorMessage ="Title is required")] 
         public string Title { get; set; } = null!;

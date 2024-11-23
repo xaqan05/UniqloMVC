@@ -68,7 +68,7 @@ namespace UniqloMVC.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(SliderCreateVM vm)
+        public async Task<IActionResult> Update(int id,SliderCreateVM vm)
         {
             if (!ModelState.IsValid) return View();
 
@@ -85,7 +85,7 @@ namespace UniqloMVC.Areas.Admin.Controllers
                 return View();
             }
 
-            var data = await _context.Sliders.FindAsync(vm.Id);
+            var data = await _context.Sliders.FindAsync(id);
 
             if (data is null) return View();
 
@@ -120,9 +120,9 @@ namespace UniqloMVC.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Hide(SliderCreateVM vm)
+        public async Task<IActionResult> Hide(int id,SliderCreateVM vm)
         {
-            var data = await _context.Sliders.FindAsync(vm.Id);
+            var data = await _context.Sliders.FindAsync(id);
 
             if (data is null) return View();
 
@@ -132,9 +132,9 @@ namespace UniqloMVC.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Show(SliderCreateVM vm)
+        public async Task<IActionResult> Show(int id,SliderCreateVM vm)
         {
-            var data = await _context.Sliders.FindAsync(vm.Id);
+            var data = await _context.Sliders.FindAsync(id);
 
             if (data is null) return View();
 
