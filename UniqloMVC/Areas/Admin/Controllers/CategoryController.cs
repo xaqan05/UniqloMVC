@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore;
 using UniqloMVC.DataAcces;
 using UniqloMVC.Models;
 using UniqloMVC.ViewModels.Category;
+using UniqloMVC.ViewModels.Slider;
 
 namespace UniqloMVC.Areas.Admin.Controllers
 {
-    public class CategoryController(UniqloDbContext _context,IWebHostEnvironment _env) : Controller
+    [Area("Admin")]
+    public class CategoryController(UniqloDbContext _context) : Controller
     {
         public async Task<IActionResult> Index()
         {
@@ -31,6 +33,66 @@ namespace UniqloMVC.Areas.Admin.Controllers
 
             await _context.AddAsync(category);
 
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+
+        public IActionResult Update(int id)
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(int id, CategoryCreateVM vm)
+        {
+            if (!ModelState.IsValid) return View();
+
+            var data = await _context.Categories.FindAsync(id);
+
+            if (data is null) return View();
+
+            data.Name = vm.Name;
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id is null) return BadRequest();
+            var data = await _context.Categories.FindAsync(id);
+
+            if (data is null) return View();
+
+
+            _context.Categories.Remove(data);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Hide(int id, CategoryCreateVM vm)
+        {
+            var data = await _context.Categories.FindAsync(id);
+
+            if (data is null) return View();
+
+            data.IsDeleted = true;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Show(int id, CategoryCreateVM vm)
+        {
+            var data = await _context.Categories.FindAsync(id);
+
+            if (data is null) return View();
+
+            data.IsDeleted = false;
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
