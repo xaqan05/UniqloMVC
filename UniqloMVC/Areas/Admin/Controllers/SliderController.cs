@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UniqloMVC.DataAcces;
+using UniqloMVC.Extensions;
 using UniqloMVC.Models;
 using UniqloMVC.ViewModels.Slider;
 
@@ -26,19 +27,20 @@ namespace UniqloMVC.Areas.Admin.Controllers
             if (!ModelState.IsValid) return View();
 
 
-            if (!vm.File.ContentType.StartsWith("image"))
+            if (!vm.File.IsValidType("image"))
             {
                 ModelState.AddModelError("File", "File type must be image");
                 return View();
             }
 
-            if (vm.File.Length > 5 * 1024 * 1024)
+            if (!vm.File.IsValidSize(5*1024))
             {
                 ModelState.AddModelError("File", "File size must be less than 5MB");
                 return View();
             }
 
-            string newFileName = Path.GetRandomFileName() + Path.GetExtension(vm.File.FileName);
+            string newFileName = await vm.File.UploadAsync("wwwroot","imgs","products");
+
 
             using (Stream stream = System.IO.File.Create(Path.Combine(_env.WebRootPath, "imgs", "sliders", newFileName)))
             {
