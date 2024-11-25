@@ -1,15 +1,22 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UniqloMVC.DataAcces;
+using UniqloMVC.ViewModels.Common;
+using UniqloMVC.ViewModels.Product;
 using UniqloMVC.ViewModels.Slider;
 
 namespace UniqloMVC.Controllers
 {
     public class HomeController(UniqloDbContext _context) : Controller
     {
+
+
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var datas = await _context.Sliders
+            HomeVM vm = new HomeVM();
+
+            vm.Sliders = await _context.Sliders
                 .Where(x=> !x.IsDeleted)
                 .Select(x => new SliderItemVM
             {
@@ -19,17 +26,21 @@ namespace UniqloMVC.Controllers
                 Subtitle = x.Subtitle
             }).ToListAsync();
 
-            return View(datas);
+            vm.Products = await _context.Products
+                .Where(x => !x.IsDeleted)
+                .Select(x => new ProductItemVM
+                {
+                    Discount = x.Discount,
+                    Id = x.Id,
+                    ImageUrl = x.CoverImage,
+                    IsInStock = x.Quantity > 0,
+                    Name = x.Name,
+                    Price = x.SellPrice
+                }).ToListAsync();
+
+            return View(vm);
         }
 
-        public IActionResult About()
-        {
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            return View();
-        }
+       
     }
 }
