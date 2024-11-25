@@ -16,8 +16,11 @@ namespace UniqloMVC.Areas.Admin.Controllers
         }
 
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
+
+            ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
+
             return View();
         }
 
