@@ -8349,6 +8349,14 @@
       "PackagePath": "staticwebassets\\imgs\\products\\jb15pyth.por.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\ju2f550f.vm3.jpg",
+      "PackagePath": "staticwebassets\\imgs\\products\\ju2f550f.vm3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\jzwqfvlw.k4b.jpg",
+      "PackagePath": "staticwebassets\\imgs\\products\\jzwqfvlw.k4b.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\kfknsllh.cxk.jpg",
       "PackagePath": "staticwebassets\\imgs\\products\\kfknsllh.cxk.jpg"
     },
@@ -8361,8 +8369,20 @@
       "PackagePath": "staticwebassets\\imgs\\products\\qnhv15ko.kqf.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\rjegypha.odq.jpg",
+      "PackagePath": "staticwebassets\\imgs\\products\\rjegypha.odq.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\sskamq1a.i3f.jpg",
       "PackagePath": "staticwebassets\\imgs\\products\\sskamq1a.i3f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\uays3jqx.gjv.jpg",
+      "PackagePath": "staticwebassets\\imgs\\products\\uays3jqx.gjv.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\v2mw4mcz.jms.jpg",
+      "PackagePath": "staticwebassets\\imgs\\products\\v2mw4mcz.jms.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\wi2thf2k.lu3.jpg",
@@ -8373,12 +8393,20 @@
       "PackagePath": "staticwebassets\\imgs\\products\\wwnvkokq.all.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\33doxajp.xjh.jpg",
+      "PackagePath": "staticwebassets\\imgs\\sliders\\33doxajp.xjh.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\cr1aaa0h.0w0.jpeg",
       "PackagePath": "staticwebassets\\imgs\\sliders\\cr1aaa0h.0w0.jpeg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\djaa2yls.gt3.jpeg",
       "PackagePath": "staticwebassets\\imgs\\sliders\\djaa2yls.gt3.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\eoe35fhf.twv.jpg",
+      "PackagePath": "staticwebassets\\imgs\\sliders\\eoe35fhf.twv.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\fvkvkpy5.2bn.jpeg",
@@ -8391,6 +8419,10 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\jzzph3xo.5io.jpg",
       "PackagePath": "staticwebassets\\imgs\\sliders\\jzzph3xo.5io.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\oa5bm40p.5ez.jpg",
+      "PackagePath": "staticwebassets\\imgs\\sliders\\oa5bm40p.5ez.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\qeovnxin.0nl.jpg",
@@ -8415,6 +8447,10 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\yhavd0lf.3jy.jpg",
       "PackagePath": "staticwebassets\\imgs\\sliders\\yhavd0lf.3jy.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.UniqloMVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.UniqloMVC.Microsoft.AspNetCore.StaticWebAssets.props",

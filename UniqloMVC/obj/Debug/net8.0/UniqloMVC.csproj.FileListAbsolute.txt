@@ -256,3 +256,7 @@ C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\refint
 C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\UniqloMVC.pdb
 C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\UniqloMVC.genruntimeconfig.cache
 C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\ref\UniqloMVC.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\UniqloMVC.staticwebassets.endpoints.json
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\staticwebassets\msbuild.UniqloMVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

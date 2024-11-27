@@ -27,7 +27,7 @@ namespace UniqloMVC.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(ProductCreateVM vm)
         {
-            if (!ModelState.IsValid) return View();
+            if (!ModelState.IsValid) return View(vm);
 
 
             if (!vm.CoverFile.IsValidType("image"))
@@ -44,12 +44,6 @@ namespace UniqloMVC.Areas.Admin.Controllers
 
             string newFileName = await vm.CoverFile.UploadAsync("wwwroot", "imgs", "products");
 
-
-            using (Stream stream = System.IO.File.Create(Path.Combine(_env.WebRootPath, "imgs", "products", newFileName)))
-            {
-                await vm.CoverFile.CopyToAsync(stream);
-            }
-
             Product product = new Product
             {
                 Name = vm.Name,
@@ -63,44 +57,67 @@ namespace UniqloMVC.Areas.Admin.Controllers
             };
 
             await _context.AddAsync(product);
+            ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
 
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Update()
+        public async Task<IActionResult> Update(int? id)
         {
-            return View();
+            if (!id.HasValue) return BadRequest();
+
+            var data = await _context.Products.FindAsync(id);
+            if (data is null) return NotFound();
+
+            ProductUpdateVM vm = new();
+
+            vm.Name = data.Name;
+            vm.Description = data.Description;
+            vm.CostPrice = data.CostPrice;
+            vm.SellPrice = data.SellPrice;
+            vm.Quantity = data.Quantity;
+            vm.Discount = data.Discount;
+            vm.CategoryId = data.CategoryId;
+
+            ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
+
+            return View(vm);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(int id, ProductCreateVM vm)
+        public async Task<IActionResult> Update(int? id, ProductUpdateVM vm)
         {
-            if (!ModelState.IsValid) return View();
-
-
-            if (!vm.CoverFile.ContentType.StartsWith("image"))
-            {
-                ModelState.AddModelError("File", "File type must be image");
-                return View();
-            }
-
-            if (vm.CoverFile.Length > 5 * 1024 * 1024)
-            {
-                ModelState.AddModelError("File", "File size must be less than 5MB");
-                return View();
-            }
-
+            if (!id.HasValue) return BadRequest();
             var data = await _context.Products.FindAsync(id);
-
             if (data is null) return View();
 
-            string newFileName = Path.GetRandomFileName() + Path.GetExtension(vm.CoverFile.FileName);
+            if (!ModelState.IsValid) return View(vm);
 
-            using (Stream stream = System.IO.File.Create(Path.Combine(_env.WebRootPath, "imgs", "products", newFileName)))
+            if (vm.CoverFile != null)
             {
-                await vm.CoverFile.CopyToAsync(stream);
+                if (!vm.CoverFile.IsValidType("image"))
+                {
+                    ModelState.AddModelError("File", "File type must be image");
+                    return View(vm);
+                }
+
+                if (!vm.CoverFile.IsValidSize(5 * 1024))
+                {
+                    ModelState.AddModelError("File", "File size must be less than 5MB");
+                    return View(vm);
+                }
+
+                string oldFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imgs", "products", data.CoverImage);
+
+                if (System.IO.File.Exists(oldFilePath))
+                {
+                    System.IO.File.Delete(oldFilePath);
+                }
+
+                string newFileName = await vm.CoverFile.UploadAsync("wwwroot", "imgs", "products");
+                data.CoverImage = newFileName;
             }
 
             data.Name = vm.Name;
@@ -116,8 +133,32 @@ namespace UniqloMVC.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Hide(int id, ProductCreateVM vm)
+        public async Task<IActionResult> Delete(int? id)
         {
+            if (!id.HasValue) return BadRequest();
+
+            var data = await _context.Products.FindAsync(id);
+
+            if (data is null) return NotFound();
+
+            string oldFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imgs", "products", data.CoverImage);
+
+            if (System.IO.File.Exists(oldFilePath))
+            {
+                System.IO.File.Delete(oldFilePath);
+            }
+
+            _context.Products.Remove(data);
+            await _context.SaveChangesAsync();
+
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Hide(int? id)
+        {
+            if (!id.HasValue) return BadRequest();
+            
             var data = await _context.Products.FindAsync(id);
 
             if (data is null) return View();
@@ -128,8 +169,10 @@ namespace UniqloMVC.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Show(int id, ProductCreateVM vm)
+        public async Task<IActionResult> Show(int? id)
         {
+            if (!id.HasValue) return BadRequest();
+
             var data = await _context.Products.FindAsync(id);
 
             if (data is null) return View();

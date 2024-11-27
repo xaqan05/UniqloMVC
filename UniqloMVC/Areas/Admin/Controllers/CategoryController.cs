@@ -39,14 +39,26 @@ namespace UniqloMVC.Areas.Admin.Controllers
         }
 
 
-        public IActionResult Update(int id)
+        public async Task<IActionResult> Update(int? id)
         {
-            return View();
+            if(!id.HasValue) return BadRequest();
+
+            var data = await _context.Categories.FindAsync(id);
+
+            if(data is null) return NotFound();
+
+            CategoryUpdateVM vm = new();
+
+            vm.Name = data.Name;
+
+            return View(vm);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Update(int id, CategoryCreateVM vm)
+        public async Task<IActionResult> Update(int? id, CategoryUpdateVM vm)
         {
+
+            if (!id.HasValue) return BadRequest();
             if (!ModelState.IsValid) return View();
 
             var data = await _context.Categories.FindAsync(id);
@@ -74,8 +86,10 @@ namespace UniqloMVC.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Hide(int id, CategoryCreateVM vm)
+        public async Task<IActionResult> Hide(int? id)
         {
+            if (!id.HasValue) return BadRequest();
+
             var data = await _context.Categories.FindAsync(id);
 
             if (data is null) return View();
@@ -86,8 +100,10 @@ namespace UniqloMVC.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Show(int id, CategoryCreateVM vm)
+        public async Task<IActionResult> Show(int? id)
         {
+            if (!id.HasValue) return BadRequest();
+
             var data = await _context.Categories.FindAsync(id);
 
             if (data is null) return View();

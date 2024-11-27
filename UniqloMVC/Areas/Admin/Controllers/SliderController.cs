@@ -33,19 +33,13 @@ namespace UniqloMVC.Areas.Admin.Controllers
                 return View();
             }
 
-            if (!vm.File.IsValidSize(5*1024))
+            if (!vm.File.IsValidSize(5 * 1024))
             {
                 ModelState.AddModelError("File", "File size must be less than 5MB");
                 return View();
             }
 
-            string newFileName = await vm.File.UploadAsync("wwwroot","imgs","products");
-
-
-            using (Stream stream = System.IO.File.Create(Path.Combine(_env.WebRootPath, "imgs", "sliders", newFileName)))
-            {
-                await vm.File.CopyToAsync(stream);
-            }
+            string newFileName = await vm.File.UploadAsync("wwwroot", "imgs", "sliders");
 
             Slider slider = new Slider
             {
@@ -62,41 +56,59 @@ namespace UniqloMVC.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult Update()
+        public async Task<IActionResult> Update(int? id)
         {
-            return View();
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> Update(int id,SliderCreateVM vm)
-        {
-            if (!ModelState.IsValid) return View();
-
-
-            if (!vm.File.ContentType.StartsWith("image"))
-            {
-                ModelState.AddModelError("File", "File type must be image");
-                return View();
-            }
-
-            if (vm.File.Length > 5 * 1024 * 1024)
-            {
-                ModelState.AddModelError("File", "File size must be less than 5MB");
-                return View();
-            }
+            if (!id.HasValue) return BadRequest();
 
             var data = await _context.Sliders.FindAsync(id);
 
-            if (data is null) return View();
+            if (data is null) return NotFound();
 
-            string newFileName = Path.GetRandomFileName() + Path.GetExtension(vm.File.FileName);
+            SliderUpdateVM vm = new();
 
-            using (Stream stream = System.IO.File.Create(Path.Combine(_env.WebRootPath, "imgs", "sliders", newFileName)))
+            vm.Title = data.Title;
+            vm.Subtitle = data.Subtitle;
+            vm.Link = data.Link;
+
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Update(int? id, SliderUpdateVM vm)
+        {
+            if (!id.HasValue) return BadRequest();
+            var data = await _context.Sliders.FindAsync(id);
+            if (data is null) return NotFound();
+            if (!ModelState.IsValid) return View(vm);
+
+
+            if (vm.File != null)
             {
-                await vm.File.CopyToAsync(stream);
+
+                if (!vm.File.IsValidType("image"))
+                {
+                    ModelState.AddModelError("File", "File type must be image");
+                    return View(vm);
+                }
+
+                if (!vm.File.IsValidSize(5 * 1024))
+                {
+                    ModelState.AddModelError("File", "File size must be less than 5MB");
+                    return View(vm);
+                }
+
+                string oldFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imgs", "sliders", data.ImageUrl);
+
+                if (System.IO.File.Exists(oldFilePath))
+                {
+                    System.IO.File.Delete(oldFilePath);
+                }
+
+                string newFileName = await vm.File.UploadAsync("wwwroot", "imgs", "sliders");
+                data.ImageUrl = newFileName;
             }
 
-            data.ImageUrl = newFileName;
             data.Link = vm.Link;
             data.Subtitle = vm.Subtitle;
             data.Title = vm.Title;
@@ -108,11 +120,18 @@ namespace UniqloMVC.Areas.Admin.Controllers
 
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id is null) return BadRequest();
+            if (!id.HasValue) return BadRequest();
             var data = await _context.Sliders.FindAsync(id);
 
             if (data is null) return View();
 
+
+            string oldFilePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "imgs", "sliders", data.ImageUrl);
+
+            if (System.IO.File.Exists(oldFilePath))
+            {
+                System.IO.File.Delete(oldFilePath);
+            }
 
             _context.Sliders.Remove(data);
             await _context.SaveChangesAsync();
@@ -120,8 +139,10 @@ namespace UniqloMVC.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Hide(int id,SliderCreateVM vm)
+        public async Task<IActionResult> Hide(int? id)
         {
+            if (!id.HasValue) return BadRequest();
+
             var data = await _context.Sliders.FindAsync(id);
 
             if (data is null) return View();
@@ -132,8 +153,10 @@ namespace UniqloMVC.Areas.Admin.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        public async Task<IActionResult> Show(int id,SliderCreateVM vm)
+        public async Task<IActionResult> Show(int? id)
         {
+            if (!id.HasValue) return BadRequest();
+
             var data = await _context.Sliders.FindAsync(id);
 
             if (data is null) return View();
