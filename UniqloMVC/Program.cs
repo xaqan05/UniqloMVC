@@ -7,6 +7,7 @@ namespace UniqloMVC
     {
         public static void Main(string[] args)
         {
+             
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<UniqloDbContext>(opt =>
@@ -17,7 +18,6 @@ namespace UniqloMVC
             var app = builder.Build();
 
             app.UseStaticFiles();
-
 
             app.MapControllerRoute(
             name: "areas",

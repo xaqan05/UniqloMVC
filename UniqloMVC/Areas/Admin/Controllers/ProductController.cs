@@ -27,8 +27,6 @@ namespace UniqloMVC.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(ProductCreateVM vm)
         {
-            if (!ModelState.IsValid) return View(vm);
-
 
             if (!vm.CoverFile.IsValidType("image"))
             {
@@ -41,6 +39,8 @@ namespace UniqloMVC.Areas.Admin.Controllers
                 ModelState.AddModelError("File", "File size must be less than 5MB");
                 return View();
             }
+
+            if (!ModelState.IsValid) return View(vm);
 
             string newFileName = await vm.CoverFile.UploadAsync("wwwroot", "imgs", "products");
 
@@ -93,8 +93,6 @@ namespace UniqloMVC.Areas.Admin.Controllers
             var data = await _context.Products.FindAsync(id);
             if (data is null) return View();
 
-            if (!ModelState.IsValid) return View(vm);
-
             if (vm.CoverFile != null)
             {
                 if (!vm.CoverFile.IsValidType("image"))
@@ -119,6 +117,8 @@ namespace UniqloMVC.Areas.Admin.Controllers
                 string newFileName = await vm.CoverFile.UploadAsync("wwwroot", "imgs", "products");
                 data.CoverImage = newFileName;
             }
+            if (!ModelState.IsValid) return View(vm);
+
 
             data.Name = vm.Name;
             data.Description = vm.Description;
@@ -127,6 +127,8 @@ namespace UniqloMVC.Areas.Admin.Controllers
             data.Quantity = vm.Quantity;
             data.Discount = vm.Discount;
             data.CategoryId = vm.CategoryId;
+
+            ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
 
             await _context.SaveChangesAsync();
 
@@ -158,7 +160,7 @@ namespace UniqloMVC.Areas.Admin.Controllers
         public async Task<IActionResult> Hide(int? id)
         {
             if (!id.HasValue) return BadRequest();
-            
+
             var data = await _context.Products.FindAsync(id);
 
             if (data is null) return View();
