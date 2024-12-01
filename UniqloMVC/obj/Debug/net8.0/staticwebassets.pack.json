@@ -8333,12 +8333,16 @@
       "PackagePath": "staticwebassets\\imgs\\products\\0v2rknog.lis.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\3caratrv.rmd.png",
+      "PackagePath": "staticwebassets\\imgs\\products\\3caratrv.rmd.png"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\3fypbmoy.soj.jpg",
       "PackagePath": "staticwebassets\\imgs\\products\\3fypbmoy.soj.jpg"
     },
     {
-      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\bb3xr3gq.u21.jpg",
-      "PackagePath": "staticwebassets\\imgs\\products\\bb3xr3gq.u21.jpg"
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\ckj3mbua.lyg.png",
+      "PackagePath": "staticwebassets\\imgs\\products\\ckj3mbua.lyg.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\cnju3vq5.ptj.jpg",
@@ -8393,6 +8397,14 @@
       "PackagePath": "staticwebassets\\imgs\\products\\wwnvkokq.all.jpg"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\products\\ztzfdhc0.qkx.png",
+      "PackagePath": "staticwebassets\\imgs\\products\\ztzfdhc0.qkx.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\0iwjhwvf.n0n.jpg",
+      "PackagePath": "staticwebassets\\imgs\\sliders\\0iwjhwvf.n0n.jpg"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\33doxajp.xjh.jpg",
       "PackagePath": "staticwebassets\\imgs\\sliders\\33doxajp.xjh.jpg"
     },
@@ -8403,10 +8415,6 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\djaa2yls.gt3.jpeg",
       "PackagePath": "staticwebassets\\imgs\\sliders\\djaa2yls.gt3.jpeg"
-    },
-    {
-      "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\dzcliymc.vca.jpg",
-      "PackagePath": "staticwebassets\\imgs\\sliders\\dzcliymc.vca.jpg"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\wwwroot\\imgs\\sliders\\eoe35fhf.twv.jpg",

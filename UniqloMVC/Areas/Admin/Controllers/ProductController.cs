@@ -28,21 +28,40 @@ namespace UniqloMVC.Areas.Admin.Controllers
         public async Task<IActionResult> Create(ProductCreateVM vm)
         {
 
-            if (!vm.CoverFile.IsValidType("image"))
+            if (vm == null)
             {
-                ModelState.AddModelError("File", "File type must be image");
+                ModelState.AddModelError("File", "File is required or file size exceeds the limit.");
+                return View(vm);
+            }
+
+
+            if (vm.OtherFiles != null && vm.OtherFiles.Any())
+            {
+                if (!vm.OtherFiles.All(x => x.IsValidType("image")))
+                {
+                    var fileNames = vm.OtherFiles.Where(x => !x.IsValidType("image")).Select(x => x.FileName);
+                    ModelState.AddModelError("OtherFiles", string.Join(",", fileNames) + "are(is) not an image");
+                }
+                if (!vm.OtherFiles.All(x => x.IsValidSize(5*1024)))
+                {
+                    var fileNames = vm.OtherFiles.Where(x => !x.IsValidSize(5*1024)).Select(x => x.FileName);
+                    ModelState.AddModelError("OtherFiles", string.Join(",", fileNames) + "must be less than 5MB");
+                }
+            }
+            if (vm.CoverFile != null)
+            {
+                if (!vm.CoverFile.IsValidType("image"))
+                    ModelState.AddModelError("File", "File type must be image");
+                if (!vm.CoverFile.IsValidSize(5 * 1024))
+                    ModelState.AddModelError("File", "File size must be less than 5MB");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
                 return View();
             }
 
-            if (!vm.CoverFile.IsValidSize(5 * 1024))
-            {
-                ModelState.AddModelError("File", "File size must be less than 5MB");
-                return View();
-            }
-
-            if (!ModelState.IsValid) return View(vm);
-
-            string newFileName = await vm.CoverFile.UploadAsync("wwwroot", "imgs", "products");
 
             Product product = new Product
             {
@@ -52,16 +71,32 @@ namespace UniqloMVC.Areas.Admin.Controllers
                 SellPrice = vm.SellPrice,
                 Quantity = vm.Quantity,
                 Discount = vm.Discount,
-                CoverImage = newFileName,
+                CoverImage = await vm.CoverFile!.UploadAsync(_env.WebRootPath, "imgs", "products"),
                 CategoryId = vm.CategoryId
+
             };
 
-            await _context.AddAsync(product);
-            ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
+            List<ProductImage> images = [];
+
+            foreach (var item in vm.OtherFiles)
+            {
+                string fileName = await item.UploadAsync(_env.WebRootPath, "imgs", "products");
+                images.Add(new ProductImage
+                {
+                    FileUrl = fileName,
+                    Product = product,
+
+                });
+            }
+
+            await _context.ProductImages.AddRangeAsync(images);
+
+            await _context.Products.AddAsync(product);
 
             await _context.SaveChangesAsync();
+            TempData["SuccessMessage"] = "Mehsul ugurla elave edildi.";
 
-            return RedirectToAction(nameof(Index));
+            return View();
         }
 
         public async Task<IActionResult> Update(int? id)
@@ -92,18 +127,25 @@ namespace UniqloMVC.Areas.Admin.Controllers
             if (!id.HasValue) return BadRequest();
             var data = await _context.Products.FindAsync(id);
             if (data is null) return View();
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
+                return View(vm);
+            }
 
             if (vm.CoverFile != null)
             {
                 if (!vm.CoverFile.IsValidType("image"))
                 {
-                    ModelState.AddModelError("File", "File type must be image");
+                    ModelState.AddModelError("CoverFile", "File type must be image");
+                    ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
                     return View(vm);
                 }
 
                 if (!vm.CoverFile.IsValidSize(5 * 1024))
                 {
-                    ModelState.AddModelError("File", "File size must be less than 5MB");
+                    ModelState.AddModelError("CoverFile", "File size must be less than 5MB");
+                    ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
                     return View(vm);
                 }
 
@@ -117,8 +159,6 @@ namespace UniqloMVC.Areas.Admin.Controllers
                 string newFileName = await vm.CoverFile.UploadAsync("wwwroot", "imgs", "products");
                 data.CoverImage = newFileName;
             }
-            if (!ModelState.IsValid) return View(vm);
-
 
             data.Name = vm.Name;
             data.Description = vm.Description;
@@ -128,7 +168,6 @@ namespace UniqloMVC.Areas.Admin.Controllers
             data.Discount = vm.Discount;
             data.CategoryId = vm.CategoryId;
 
-            ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
 
             await _context.SaveChangesAsync();
 
@@ -152,7 +191,7 @@ namespace UniqloMVC.Areas.Admin.Controllers
 
             _context.Products.Remove(data);
             await _context.SaveChangesAsync();
-
+            TempData["SuccessMessage"] = "Mehsul ugurla silindi.";
 
             return RedirectToAction(nameof(Index));
         }

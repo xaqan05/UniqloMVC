@@ -41,11 +41,11 @@ namespace UniqloMVC.Areas.Admin.Controllers
 
         public async Task<IActionResult> Update(int? id)
         {
-            if(!id.HasValue) return BadRequest();
+            if (!id.HasValue) return BadRequest();
 
             var data = await _context.Categories.FindAsync(id);
 
-            if(data is null) return NotFound();
+            if (data is null) return NotFound();
 
             CategoryUpdateVM vm = new();
 
@@ -75,14 +75,17 @@ namespace UniqloMVC.Areas.Admin.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id is null) return BadRequest();
-            var data = await _context.Categories.FindAsync(id);
-
+            var data = await _context.Categories.Include(c => c.Products).FirstOrDefaultAsync(c => c.Id == id);
             if (data is null) return View();
 
-
+            if (data.Products.Any())
+            {
+                TempData["ErrorMessage"] = "Bu kateqoriya ile bagli mehsullar movcuddur.Ona gore bu kateqoriyani sile bilmersiniz.";
+                return RedirectToAction(nameof(Index));
+            }
             _context.Categories.Remove(data);
             await _context.SaveChangesAsync();
-
+            TempData["SuccessMessage"] = "Kateqoriya ugurla silindi.";
             return RedirectToAction(nameof(Index));
         }
 

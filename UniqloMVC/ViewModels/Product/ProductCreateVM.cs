@@ -23,6 +23,10 @@ namespace UniqloMVC.ViewModels.Product
         [Required(ErrorMessage = "CoverFile is required")]
         public IFormFile CoverFile { get; set; } = null!;
 
+
+        public IEnumerable<IFormFile>? OtherFiles { get; set; }
+
+        [Required(ErrorMessage = "Category is required")]
         public int? CategoryId { get; set; }
 
     }

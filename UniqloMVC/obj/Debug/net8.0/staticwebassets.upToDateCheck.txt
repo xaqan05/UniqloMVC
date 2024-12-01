@@ -2081,8 +2081,9 @@ wwwroot\assets\js\vendor\modernizr-3.11.2.min.js
 wwwroot\assets\js\waypoints.min.js
 wwwroot\assets\style.css
 wwwroot\imgs\products\0v2rknog.lis.jpg
+wwwroot\imgs\products\3caratrv.rmd.png
 wwwroot\imgs\products\3fypbmoy.soj.jpg
-wwwroot\imgs\products\bb3xr3gq.u21.jpg
+wwwroot\imgs\products\ckj3mbua.lyg.png
 wwwroot\imgs\products\cnju3vq5.ptj.jpg
 wwwroot\imgs\products\jamzkdrk.toy.jpg
 wwwroot\imgs\products\jb15pyth.por.jpg
@@ -2096,10 +2097,11 @@ wwwroot\imgs\products\uays3jqx.gjv.jpg
 wwwroot\imgs\products\v2mw4mcz.jms.jpg
 wwwroot\imgs\products\wi2thf2k.lu3.jpg
 wwwroot\imgs\products\wwnvkokq.all.jpg
+wwwroot\imgs\products\ztzfdhc0.qkx.png
+wwwroot\imgs\sliders\0iwjhwvf.n0n.jpg
 wwwroot\imgs\sliders\33doxajp.xjh.jpg
 wwwroot\imgs\sliders\cr1aaa0h.0w0.jpeg
 wwwroot\imgs\sliders\djaa2yls.gt3.jpeg
-wwwroot\imgs\sliders\dzcliymc.vca.jpg
 wwwroot\imgs\sliders\eoe35fhf.twv.jpg
 wwwroot\imgs\sliders\fvkvkpy5.2bn.jpeg
 wwwroot\imgs\sliders\huyogorq.0tw.jpg

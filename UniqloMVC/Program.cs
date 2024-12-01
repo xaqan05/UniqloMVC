@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.EntityFrameworkCore;
 using UniqloMVC.DataAcces;
 
@@ -10,10 +11,17 @@ namespace UniqloMVC
              
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
+
+            builder.Services.Configure<FormOptions>(options =>
+            {
+                options.MultipartBodyLengthLimit = 52428800;
+            });
+
             builder.Services.AddDbContext<UniqloDbContext>(opt =>
             {
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("MSSql"));
             });
+
 
             var app = builder.Build();
 

@@ -18,5 +18,6 @@
 
         public Category? Category { get; set; }
 
+        public IEnumerable<ProductImage>? Images { get; set; }
     }
 }

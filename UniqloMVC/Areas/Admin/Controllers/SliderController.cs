@@ -24,9 +24,14 @@ namespace UniqloMVC.Areas.Admin.Controllers
 
         public async Task<IActionResult> Create(SliderCreateVM vm)
         {
+            if (vm == null)
+            {
+                ModelState.AddModelError("File", "File is required or file size exceeds the limit.");
+                return View(vm);
+            }
+
             if (!ModelState.IsValid) return View();
-
-
+            
             if (!vm.File.IsValidType("image"))
             {
                 ModelState.AddModelError("File", "File type must be image");
@@ -38,7 +43,6 @@ namespace UniqloMVC.Areas.Admin.Controllers
                 ModelState.AddModelError("File", "File size must be less than 5MB");
                 return View();
             }
-
             string newFileName = await vm.File.UploadAsync("wwwroot", "imgs", "sliders");
 
             Slider slider = new Slider
@@ -48,7 +52,6 @@ namespace UniqloMVC.Areas.Admin.Controllers
                 Subtitle = vm.Subtitle,
                 Title = vm.Title,
             };
-
             await _context.AddAsync(slider);
 
             await _context.SaveChangesAsync();
