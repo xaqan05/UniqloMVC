@@ -40,9 +40,24 @@
             </div>
 
             <div class="form-group">
+                <div>
+                    <img width="70" src="~/imgs/products/@Model.CoverFileUrl" />
+                </div>
                 <label asp-for="CoverFile">CoverFile*</label>
                 <input asp-for="CoverFile" class="form-control">
                 <span asp-validation-for="CoverFile" class="text-small text-danger"></span>
+            </div> 
+            
+            <div class="form-group">
+                <div>
+                    @foreach (var item in Model.OtherFileUrls ?? [])
+                    {
+                        <img width="70" src="~/imgs/products/@item" />
+                    }
+                </div>
+                <label asp-for="OtherFileUrls">OtherFile*</label>
+                <input asp-for="CoverFile" class="form-control">
+                <span asp-validation-for="OtherFileUrls" class="text-small text-danger"></span>
             </div>
 
             <div class="form-group">

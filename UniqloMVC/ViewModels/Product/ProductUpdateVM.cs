@@ -18,9 +18,12 @@ namespace UniqloMVC.ViewModels.Product
 
         [Required(ErrorMessage = "Quantity is required")]
         public int Quantity { get; set; }
+
         public int Discount { get; set; }
 
+        public string CoverFileUrl { get; set; }
 
+        public IEnumerable<string> OtherFileUrls { get; set; }
         public IFormFile? CoverFile { get; set; }
 
         public int? CategoryId { get; set; }

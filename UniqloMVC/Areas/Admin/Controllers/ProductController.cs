@@ -103,22 +103,25 @@ namespace UniqloMVC.Areas.Admin.Controllers
         {
             if (!id.HasValue) return BadRequest();
 
-            var data = await _context.Products.FindAsync(id);
+
+            var data = await _context.Products.Where(x => x.Id == id.Value).Select(x => new ProductUpdateVM
+            {
+                CategoryId = x.CategoryId,
+                Name = x.Name,
+                Description = x.Description,
+                CostPrice = x.CostPrice,
+                SellPrice = x.SellPrice,
+                Quantity = x.Quantity,
+                Discount = x.Discount,
+                CoverFileUrl = x.CoverImage,
+                OtherFileUrls = x.Images.Select(y => y.FileUrl)
+            }).FirstOrDefaultAsync();
+
             if (data is null) return NotFound();
-
-            ProductUpdateVM vm = new();
-
-            vm.Name = data.Name;
-            vm.Description = data.Description;
-            vm.CostPrice = data.CostPrice;
-            vm.SellPrice = data.SellPrice;
-            vm.Quantity = data.Quantity;
-            vm.Discount = data.Discount;
-            vm.CategoryId = data.CategoryId;
 
             ViewBag.Categories = await _context.Categories.Where(x => !x.IsDeleted).ToListAsync();
 
-            return View(vm);
+            return View(data);
         }
 
         [HttpPost]
