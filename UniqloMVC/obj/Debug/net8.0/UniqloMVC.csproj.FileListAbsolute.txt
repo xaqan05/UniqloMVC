@@ -260,3 +260,8 @@ C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Uniqlo
 C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\staticwebassets\msbuild.UniqloMVC.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll

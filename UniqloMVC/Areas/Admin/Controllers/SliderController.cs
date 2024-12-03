@@ -8,7 +8,7 @@ using UniqloMVC.ViewModels.Slider;
 namespace UniqloMVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class SliderController(UniqloDbContext _context, IWebHostEnvironment _env) : Controller
+    public class SliderController(UniqloDbContext _context) : Controller
     {
         public async Task<IActionResult> Index()
         {

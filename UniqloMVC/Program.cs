@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using UniqloMVC.DataAcces;
+using UniqloMVC.Models;
 
 namespace UniqloMVC
 {
@@ -17,11 +19,21 @@ namespace UniqloMVC
                 options.MultipartBodyLengthLimit = 52428800;
             });
 
+
             builder.Services.AddDbContext<UniqloDbContext>(opt =>
             {
                 opt.UseSqlServer(builder.Configuration.GetConnectionString("MSSql"));
             });
 
+            builder.Services.AddIdentity<User, IdentityRole>(opt =>
+            {
+                opt.Password.RequireNonAlphanumeric = true;
+                opt.Password.RequireDigit = true;
+                opt.Password.RequireLowercase = true;
+                opt.Password.RequireUppercase = true;
+                opt.Lockout.MaxFailedAccessAttempts = 5;
+                opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+            }).AddDefaultTokenProviders().AddEntityFrameworkStores<UniqloDbContext>();
 
             var app = builder.Build();
 
