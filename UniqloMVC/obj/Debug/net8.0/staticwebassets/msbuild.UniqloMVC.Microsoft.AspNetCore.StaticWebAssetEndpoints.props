@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/UniqloMVC/Admin/css/sb-admin-2.anxxoru8fq.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Admin\css\sb-admin-2.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"anxxoru8fq"},{"Name":"integrity","Value":"sha256-lmybsFOrIBMrt4bP17wBxnc4hJXkB0ZO2LReio2usF4="},{"Name":"label","Value":"_content/UniqloMVC/Admin/css/sb-admin-2.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"222410"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022lmybsFOrIBMrt4bP17wBxnc4hJXkB0ZO2LReio2usF4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 22:12:21 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/UniqloMVC/Admin/css/sb-admin-2.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Admin\css\sb-admin-2.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-PgSRyGbnowxCLcWWdWGybd6NOuCbvE98uvHgNTlKxGE="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"222438"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022PgSRyGbnowxCLcWWdWGybd6NOuCbvE98uvHgNTlKxGE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 27 Nov 2024 21:35:05 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/UniqloMVC/Admin/css/sb-admin-2.m2e4o71t8u.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Admin\css\sb-admin-2.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"m2e4o71t8u"},{"Name":"integrity","Value":"sha256-PgSRyGbnowxCLcWWdWGybd6NOuCbvE98uvHgNTlKxGE="},{"Name":"label","Value":"_content/UniqloMVC/Admin/css/sb-admin-2.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"222438"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022PgSRyGbnowxCLcWWdWGybd6NOuCbvE98uvHgNTlKxGE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 27 Nov 2024 21:35:05 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-lmybsFOrIBMrt4bP17wBxnc4hJXkB0ZO2LReio2usF4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"222410"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022lmybsFOrIBMrt4bP17wBxnc4hJXkB0ZO2LReio2usF4=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 22:12:21 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/UniqloMVC/Admin/css/sb-admin-2.min.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Admin\css\sb-admin-2.min.css'))</AssetFile>
@@ -24983,6 +24983,18 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-6BJ/vGINFFN0DLu/MiKr67I9X\u002Bf7\u002B3wlzrTpe5fC\u002B6U="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"87216"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00226BJ/vGINFFN0DLu/MiKr67I9X\u002Bf7\u002B3wlzrTpe5fC\u002B6U=\u0022"},{"Name":"Last-Modified","Value":"Wed, 27 Nov 2024 21:35:07 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/UniqloMVC/imgs/icardi.bpsccnutp9.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imgs\icardi.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bpsccnutp9"},{"Name":"integrity","Value":"sha256-T4TvnnyQtcsOSRrvV17YpQ7/89C4NEizjLWUrE7YiL8="},{"Name":"label","Value":"_content/UniqloMVC/imgs/icardi.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1176476"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022T4TvnnyQtcsOSRrvV17YpQ7/89C4NEizjLWUrE7YiL8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 22:09:36 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/UniqloMVC/imgs/icardi.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imgs\icardi.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-T4TvnnyQtcsOSRrvV17YpQ7/89C4NEizjLWUrE7YiL8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"1176476"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022T4TvnnyQtcsOSRrvV17YpQ7/89C4NEizjLWUrE7YiL8=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 22:09:36 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/UniqloMVC/imgs/products/0v2rknog.lis.bb2xs6kfq7.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\imgs\products\0v2rknog.lis.jpg'))</AssetFile>

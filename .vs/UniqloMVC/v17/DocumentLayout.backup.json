@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -11,12 +15,8 @@
       "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\viewmodels\\auths\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\viewmodels\\auths\\registervm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\viewmodels\\auths\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\viewmodels\\auths\\loginvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,53 +35,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "UniqloMVC\\Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "UniqloMVC\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-04T08:44:15.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RegisterVM.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\ViewModels\\Auths\\RegisterVM.cs",
-              "RelativeDocumentMoniker": "UniqloMVC\\ViewModels\\Auths\\RegisterVM.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\ViewModels\\Auths\\RegisterVM.cs",
-              "RelativeToolTip": "UniqloMVC\\ViewModels\\Auths\\RegisterVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T08:43:03.323Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Account\\Register.cshtml",
               "RelativeDocumentMoniker": "UniqloMVC\\Views\\Account\\Register.cshtml",
               "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Account\\Register.cshtml",
               "RelativeToolTip": "UniqloMVC\\Views\\Account\\Register.cshtml",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAACIAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAgwEoAAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-04T08:42:16.935Z",
+              "WhenOpened": "2024-12-04T23:21:09.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginVM.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\ViewModels\\Auths\\LoginVM.cs",
+              "RelativeDocumentMoniker": "UniqloMVC\\ViewModels\\Auths\\LoginVM.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\ViewModels\\Auths\\LoginVM.cs",
+              "RelativeToolTip": "UniqloMVC\\ViewModels\\Auths\\LoginVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T23:19:53.907Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "UniqloMVC\\Views\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "UniqloMVC\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEEAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-04T23:16:25.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "UniqloMVC\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Controllers\\AccountController.cs",
               "RelativeToolTip": "UniqloMVC\\Controllers\\AccountController.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAApwDsAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwCsAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-04T08:37:00.016Z",
+              "WhenOpened": "2024-12-04T23:15:31.046Z",
               "EditorCaption": ""
             }
           ]

@@ -2080,6 +2080,7 @@ wwwroot\assets\js\vendor\jquery-migrate-3.3.2.min.js
 wwwroot\assets\js\vendor\modernizr-3.11.2.min.js
 wwwroot\assets\js\waypoints.min.js
 wwwroot\assets\style.css
+wwwroot\imgs\icardi.png
 wwwroot\imgs\products\0v2rknog.lis.jpg
 wwwroot\imgs\products\2wgh4jdt.p4s.jpg
 wwwroot\imgs\products\3fypbmoy.soj.jpg

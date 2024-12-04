@@ -10,7 +10,7 @@ namespace UniqloMVC
     {
         public static void Main(string[] args)
         {
-             
+
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddControllersWithViews();
 
@@ -38,6 +38,12 @@ namespace UniqloMVC
             var app = builder.Build();
 
             app.UseStaticFiles();
+
+            app.MapControllerRoute(
+                name: "register",
+                pattern: "register",
+                defaults: new { controller = "Account", action = "Register" }
+                );
 
             app.MapControllerRoute(
             name: "areas",

@@ -1,55 +1,92 @@
 ﻿@using UniqloMVC.ViewModels.Auths
-@model RegisterVM
+@model UserCreateVM
 @{
-    ViewData["Title"] = "Register";
+    Layout = null;
 }
-<!-- Start Login Register Area -->
-<div class="htc__login__register bg__white ptb--130" style="background: rgba(0, 0, 0, 0) url(images/bg/5.jpg) no-repeat scroll center center / cover ;">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <ul class="login__register__menu nav justify-contend-center">
-                    <li class="login"><a asp-action="Login">Login</a></li>
-                    <li class="register active"><a class="active" asp-action="Register">Register</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- Start Login Register Content -->
-        <div class="row tab-content justify-content-center">
-            <div class="col-md-6  ml-auto mr-auto">
-                <div class="htc__login__register__wrap">
-                    <!-- Start Single Content -->
-                    <div id="register" class="single__tabs__panel tab-pane active show">
-                        <form class="login" method="post">
-                            <input asp-for="Fullname" placeholder="Fullname">
-                            <span asp-validation-for="Fullname" class="text-danger"></span>
-                            <input asp-for="Username" placeholder="Username*">
-                            <span asp-validation-for="Username" class="text-danger"></span>
-                            <input asp-for="Email" placeholder="Email*">
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                            <input asp-for="Password" placeholder="Password*">
-                            <span asp-validation-for="Password" class="text-danger"></span>
-                            <input asp-for="RePassword" placeholder="Repreat password*">
-                            <span asp-validation-for="RePassword" class="text-danger"></span>
-                            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
-                            <div class="htc__login__btn">
-                                <button class="btn btn-danger">register</button>
-                            </div>
-                        </form>
-                        <div class="htc__social__connect">
-                            <h2>Or Login With</h2>
-                            <ul class="htc__soaial__list">
-                                <li><a class="bg--twitter" href="https://twitter.com/devitemsllc" target="_blank"><i class="zmdi zmdi-twitter"></i></a></li>
-                                <li><a class="bg--instagram" href="https://www.instagram.com/devitems/" target="_blank"><i class="zmdi zmdi-instagram"></i></a></li>
-                                <li><a class="bg--facebook" href="https://www.facebook.com/devitems/?ref=bookmarks" target="_blank"><i class="zmdi zmdi-facebook"></i></a></li>
-                                <li><a class="bg--googleplus" href="https://plus.google.com/" target="_blank"><i class="zmdi zmdi-google-plus"></i></a></li>
-                            </ul>
-                        </div>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Create an Account</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="~/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="~/admin/css/sb-admin-2.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gradient-primary" style="display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;">
+    <div class="card o-hidden border-0 shadow-lg" style="width: 400px;">
+        <div class="card-body p-0">
+            <div class="p-5" style="padding: 30px;">
+                <div class="text-center">
+                    <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                </div>
+                <form class="user" method="post">
+                    <div class="form-group">
+                        <label asp-for="FullName">FullName</label>
+                        <input asp-for="FullName" class="form-control form-control-user" style="height: 40px; border-radius: 5px;">
+                        <span class="text-danger" asp-validation-for="FullName"></span>
                     </div>
-                    <!-- End Single Content -->
+                    <div class="form-group">
+                        <label asp-for="Username">Username</label>
+                        <input asp-for="Username" class="form-control form-control-user" style="height: 40px; border-radius: 5px;">
+                        <span class="text-danger" asp-validation-for="Username"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email">Email</label>
+                        <input asp-for="Email" class="form-control form-control-user" style="height: 40px; border-radius: 5px;">
+                        <span class="text-danger" asp-validation-for="Email"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Password">Password</label>
+                        <input asp-for="Password" class="form-control form-control-user" style="height: 40px; border-radius: 5px;">
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="RePassword">RePassword</label>
+                        <input asp-for="RePassword" class="form-control form-control-user" style="height: 40px; border-radius: 5px;">
+                        <span class="text-danger" asp-validation-for="RePassword"></span>
+                    </div>
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger">
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-user btn-block" style="width: 100%; padding: 10px 0; font-size: 16px;">
+                        Register Account
+                    </button>
+                </form>
+                <hr>
+                <div class="text-center">
+                    <a class="small" href="forgot-password.html">Forgot Password?</a>
+                </div>
+                <div class="text-center">
+                    <a class="small" asp-action="Login">Already have an account? Login!</a>
                 </div>
             </div>
         </div>
-        <!-- End Login Register Content -->
     </div>
-</div>
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="~/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="~/admin/js/sb-admin-2.min.js"></script>
+</body>
+
+</html>
