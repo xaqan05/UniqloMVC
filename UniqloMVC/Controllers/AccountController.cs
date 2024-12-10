@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using UniqloMVC.Enums;
 using UniqloMVC.Models;
 using UniqloMVC.ViewModels.Auths;
 
@@ -7,8 +9,12 @@ namespace UniqloMVC.Controllers
 {
     public class AccountController(UserManager<User> _userManager, SignInManager<User> _signInManager) : Controller
     {
+        bool isAuthenticated => User.Identity?.IsAuthenticated ?? false;
+
         public IActionResult Register()
         {
+            if (isAuthenticated) return RedirectToAction("Index", "Home");
+
             return View();
         }
 
@@ -16,6 +22,8 @@ namespace UniqloMVC.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(UserCreateVM vm)
         {
+            if (isAuthenticated) return RedirectToAction("Index", "Home");
+
             if (!ModelState.IsValid)
                 return View();
 
@@ -38,20 +46,34 @@ namespace UniqloMVC.Controllers
                 return View();
             }
 
+            var roleResult = await _userManager.AddToRoleAsync(user, nameof(Roles.User));
+
+            if (roleResult.Succeeded)
+            {
+                foreach (var error in roleResult.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }
+                return View();
+            }
+
             return View();
         }
 
         public IActionResult Login()
         {
+            if (isAuthenticated) return RedirectToAction("Index", "Home");
+
             return View();
         }
 
         [HttpPost]
 
-        public async Task<IActionResult> Login(LoginVM vm)
+        public async Task<IActionResult> Login(LoginVM vm, string? returnUrl = null)
         {
-            if (!ModelState.IsValid) return View();
+            if (isAuthenticated) return RedirectToAction("Index", "Home");
 
+            if (!ModelState.IsValid) return View();
 
             User? user = null;
 
@@ -72,14 +94,30 @@ namespace UniqloMVC.Controllers
             if (!result.Succeeded)
             {
                 if (result.IsNotAllowed)
-                    ModelState.AddModelError("","Usernae or Password is wrong");
-                if(result.IsLockedOut)
+                    ModelState.AddModelError("", "Usernae or Password is wrong");
+                if (result.IsLockedOut)
                     ModelState.AddModelError("", "Wait until" + user.LockoutEnd!.Value.ToString("yyyy-MM-dd HH:mm:ss"));
 
                 return View();
             }
 
-            return RedirectToAction("Index","Home");
+            if (string.IsNullOrEmpty(returnUrl))
+            {
+                if (await _userManager.IsInRoleAsync(user, "Admin"))
+                {
+                    return RedirectToAction("Index", new { Controller = "Dashboard", Area = "Admin" });
+                }
+                return RedirectToAction("Index", "Home");
+            }
+
+            return LocalRedirect(returnUrl);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> LogOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction(nameof(Login));
         }
     }
 }

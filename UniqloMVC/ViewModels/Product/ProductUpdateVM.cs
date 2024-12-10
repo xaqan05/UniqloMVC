@@ -20,7 +20,7 @@ namespace UniqloMVC.ViewModels.Product
         public int Quantity { get; set; }
 
         public int Discount { get; set; }
-        public string CoverFileUrl { get; set; }
+        public string CoverFileUrl { get; set; } = null!;
 
         public IEnumerable<string> OtherFileUrls { get; set; }
         public IFormFile? CoverFile { get; set; }

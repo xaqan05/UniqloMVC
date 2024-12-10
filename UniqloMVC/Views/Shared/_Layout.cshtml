@@ -74,7 +74,7 @@
                                 @if (Context.User.Identity?.IsAuthenticated == true)
                                 {
                                     <li>
-                                        <a >
+                                        <a asp-controller="Account" asp-action="LogOut">
                                             <span class="ti-arrow-circle-right"></span>
                                         </a>
                                     </li>
@@ -321,5 +321,6 @@
         </footer>
         <!-- End Footer Area -->
     </div>
+    @await RenderSectionAsync("scripts", false)
 </body>
 </html>

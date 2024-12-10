@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UniqloMVC.DataAcces;
+using UniqloMVC.Enums;
 using UniqloMVC.Extensions;
 using UniqloMVC.Models;
 using UniqloMVC.ViewModels.Product;
@@ -8,6 +10,7 @@ using UniqloMVC.ViewModels.Product;
 namespace UniqloMVC.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = nameof(Roles.Admin))]
     public class ProductController(UniqloDbContext _context, IWebHostEnvironment _env) : Controller
     {
         public async Task<IActionResult> Index()
