@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.EntityFrameworkCore;
 using UniqloMVC.DataAcces;
 using UniqloMVC.Extensions;
@@ -28,7 +29,7 @@ namespace UniqloMVC
 
             builder.Services.AddIdentity<User, IdentityRole>(opt =>
             {
-                opt.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz._";
+                opt.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyz1234567890._";
                 opt.Password.RequireNonAlphanumeric = false;
                 opt.Password.RequireDigit = true;
                 opt.Password.RequireLowercase = true;
@@ -36,16 +37,22 @@ namespace UniqloMVC
                 opt.Lockout.MaxFailedAccessAttempts = 5;
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
             }).AddDefaultTokenProviders().AddEntityFrameworkStores<UniqloDbContext>();
-
             builder.Services.ConfigureApplicationCookie(x =>
             {
                 x.AccessDeniedPath = "/Home/AccesDenied";
+            });
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(20);
+                options.Cookie.HttpOnly = true;  
+                options.Cookie.IsEssential = true;  
             });
 
             var app = builder.Build();
 
             app.UseStaticFiles();
 
+            app.UseSession();
             app.UseUserSeed();
 
             app.MapControllerRoute(

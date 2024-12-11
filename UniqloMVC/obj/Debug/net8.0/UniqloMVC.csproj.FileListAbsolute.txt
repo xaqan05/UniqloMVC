@@ -538,3 +538,12 @@ C:\Users\II novbe\Desktop\Task\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.As
 C:\Users\II novbe\Desktop\Task\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
 C:\Users\II novbe\Desktop\Task\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
 C:\Users\II novbe\Desktop\Task\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.JSInterop.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\user\Desktop\Programming\C#\UniqloMVC\UniqloMVC\bin\Debug\net8.0\Microsoft.JSInterop.dll

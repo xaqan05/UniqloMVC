@@ -6,7 +6,10 @@ namespace UniqloMVC.Models
     {
         public string FullName { get; set; } = null!;
         public string ProfileImageUrl { get; set; } = null!;
-        public ICollection<Comment> Comments { get; set; }
+        public ICollection<Comment>? Comments { get; set; }
+
+        public string? VerificationCode { get; set; }
+        public DateTime? CodeExpiryTime { get; set; }
 
     }
 }

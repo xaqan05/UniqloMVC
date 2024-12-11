@@ -21,6 +21,8 @@ namespace UniqloMVC.Controllers
                 .Where(x => x.Id == id)
                 .Include(x => x.Images)
                 .Include(x => x.Rating)
+                .Include(x => x.Comments)
+                .ThenInclude(c => c.User)
                 .FirstOrDefaultAsync();
 
             if (data is null) return NotFound();
