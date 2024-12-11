@@ -4,6 +4,7 @@ namespace UniqloMVC.ViewModels.Product
 {
     public class ProductDetailsVM
     {
+        public int Id { get; set; }
         public string ProductName { get; set; } = null!;
         public string ProductDescription { get; set; } = null!;
 

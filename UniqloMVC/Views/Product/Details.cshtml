@@ -1,6 +1,8 @@
-﻿@model ProductDetailsVM
+﻿@using UniqloMVC.Models
+@model Product
 @{
     ViewData["Title"] = "Details";
+    var rating = Model.Rating.Count > 0 ? Model.Rating.Average(x => x.Rating) : 0;
 }
 
 <div class="ht__bradcaump__area" style="background: rgba(0, 0, 0, 0) url(images/bg/2.jpg) no-repeat scroll center center / cover ;">
@@ -33,10 +35,10 @@
 
                         <li role="presentation" class="pot-small-img">
                             <a class="active" href="#img-tab-1" role="tab" data-bs-toggle="tab">
-                                <img width="150px" src="~/imgs/products/@Model.CoverImageUrl" alt="small-image">
+                                <img width="150px" src="~/imgs/products/@Model.CoverImage" alt="small-image">
                             </a>
                         </li>
-                        @foreach (var item in Model.OtherFileUrls?.Select(x => x.FileUrl) ?? [])
+                        @foreach (var item in Model.Images?.Select(x => x.FileUrl) ?? [])
                         {
                             <li role="presentation" class="pot-small-img">
                                 <a class="active" href="#img-tab-1" role="tab" data-bs-toggle="tab">
@@ -49,7 +51,7 @@
                     <div class="product__big__images">
                         <div class="portfolio-full-image tab-content">
                             <div role="tabpanel" class="tab-pane active">
-                                <img src="~/imgs/products/@Model.CoverImageUrl" alt="full-image">
+                                <img src="~/imgs/products/@Model.CoverImage" alt="full-image">
                             </div>
                         </div>
                     </div>
@@ -58,17 +60,22 @@
             <div class="col-md-12 col-lg-6 col-sm-12 smt-30 xmt-30">
                 <div class="htc__product__details__inner">
                     <div class="pro__detl__title">
-                        <h2>@Model.ProductName</h2>
+                        <h2>@Model.Name</h2>
                     </div>
+                    <form asp-action="Rating" method="get">
+                        <input name="ProductId" value="@Model.Id" type="hidden" />
+                        <input name="rating" value="@ViewBag.Rating" type="number" min="1" max="5" />
+                        <button type="submit" class="btn btn-link">Rate</button>
+                    </form>
                     <div class="pro__dtl__rating">
                         <ul class="pro__rating">
-                            <li><span class="ti-star"></span></li>
-                            <li><span class="ti-star"></span></li>
-                            <li><span class="ti-star"></span></li>
-                            <li><span class="ti-star"></span></li>
-                            <li><span class="ti-star"></span></li>
+                            @for (int i = 0; i < Math.Ceiling(rating); i++)
+                            {
+                                <li><span class="ti-star"></span></li>
+                            }
+                            (@rating)
                         </ul>
-                        <span class="rat__qun">(Based on 0 Ratings)</span>
+                        <span class="rat__qun">(Based on @Model.Rating.Count Ratings)</span>
                     </div>
                     <ul class="pro__dtl__prize">
                         @if (Model.Discount > 0)
@@ -82,7 +89,7 @@
                         }
                     </ul>
                     <div class="pro__details">
-                        <p>@Model.ProductDescription</p>
+                        <p>@Model.Description</p>
                     </div>
                     <div class="pro__dtl__color">
                         <h2 class="title__5">Choose Colour</h2>
@@ -317,7 +324,7 @@
         </div>
     </div>
 </section>
-@section scripts{
+@section scripts {
     <script>
         // Küçük ürün resmine tıklandığında büyük resim değişiyor
         document.querySelectorAll(".product__small__images img").forEach(img => {

@@ -12,6 +12,9 @@ namespace UniqloMVC.DataAcces
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<ProductImage> ProductImages { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+
+        public DbSet<ProductRating> ProductRatings { get; set; }
         public UniqloDbContext(DbContextOptions opt) : base(opt) { }
     }
 }

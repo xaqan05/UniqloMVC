@@ -19,5 +19,9 @@
         public Category? Category { get; set; }
 
         public IEnumerable<ProductImage>? Images { get; set; }
+
+        public ICollection<Tag>? Tags { get; set; }
+
+        public ICollection<ProductRating> Rating { get; set; }
     }
 }

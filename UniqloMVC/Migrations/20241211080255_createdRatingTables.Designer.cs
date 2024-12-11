@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UniqloMVC.DataAcces;
 
@@ -11,9 +12,11 @@ using UniqloMVC.DataAcces;
 namespace UniqloMVC.Migrations
 {
     [DbContext(typeof(UniqloDbContext))]
-    partial class UniqloDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241211080255_createdRatingTables")]
+    partial class createdRatingTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -516,7 +519,7 @@ namespace UniqloMVC.Migrations
             modelBuilder.Entity("UniqloMVC.Models.ProductRating", b =>
                 {
                     b.HasOne("UniqloMVC.Models.Product", "Product")
-                        .WithMany("Rating")
+                        .WithMany()
                         .HasForeignKey("ProductId");
 
                     b.HasOne("UniqloMVC.Models.User", "User")
@@ -536,8 +539,6 @@ namespace UniqloMVC.Migrations
             modelBuilder.Entity("UniqloMVC.Models.Product", b =>
                 {
                     b.Navigation("Images");
-
-                    b.Navigation("Rating");
                 });
 #pragma warning restore 612, 618
         }

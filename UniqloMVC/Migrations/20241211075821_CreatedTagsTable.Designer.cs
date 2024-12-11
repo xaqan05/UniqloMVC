@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UniqloMVC.DataAcces;
 
@@ -11,9 +12,11 @@ using UniqloMVC.DataAcces;
 namespace UniqloMVC.Migrations
 {
     [DbContext(typeof(UniqloDbContext))]
-    partial class UniqloDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241211075821_CreatedTagsTable")]
+    partial class CreatedTagsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -269,32 +272,6 @@ namespace UniqloMVC.Migrations
                     b.ToTable("ProductImages");
                 });
 
-            modelBuilder.Entity("UniqloMVC.Models.ProductRating", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Rating")
-                        .HasColumnType("int");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProductId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ProductRatings");
-                });
-
             modelBuilder.Entity("UniqloMVC.Models.Slider", b =>
                 {
                     b.Property<int>("Id")
@@ -513,21 +490,6 @@ namespace UniqloMVC.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("UniqloMVC.Models.ProductRating", b =>
-                {
-                    b.HasOne("UniqloMVC.Models.Product", "Product")
-                        .WithMany("Rating")
-                        .HasForeignKey("ProductId");
-
-                    b.HasOne("UniqloMVC.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("Product");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("UniqloMVC.Models.Category", b =>
                 {
                     b.Navigation("Products");
@@ -536,8 +498,6 @@ namespace UniqloMVC.Migrations
             modelBuilder.Entity("UniqloMVC.Models.Product", b =>
                 {
                     b.Navigation("Images");
-
-                    b.Navigation("Rating");
                 });
 #pragma warning restore 612, 618
         }
