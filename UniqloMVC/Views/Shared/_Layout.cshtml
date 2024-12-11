@@ -42,7 +42,7 @@
                     <div class="row align-items-center">
                         <div class="col-md-2 col-lg-2 col-6">
                             <div class="logo">
-                                <a href="index-4.html">
+                                <a asp-controller="Home" asp-action="Index">
                                     <img src="~/assets/images/logo/uniqlo.png" alt="logo">
                                 </a>
                             </div>
@@ -52,7 +52,7 @@
                             <nav class="mainmenu__nav d-none d-lg-block">
                                 <ul class="main__menu">
                                     <li><a asp-action="Index" asp-controller="Home">Home</a></li>
-                                    <li><a href="shop.html">Shop</a>
+                                    <li><a asp-action="Index" asp-controller="Shop">Shop</a>
                                     <li><a asp-action="Index" asp-controller="About">About</a></li>
                                     <li><a asp-action="Index" asp-controller="Contact">Contact</a></li>
                                 </ul>
@@ -87,6 +87,7 @@
                                         </a>
                                     </li>
                                 }
+                                <li class="cart__menu"><span class="ti-shopping-cart"></span></li>
                             </ul>
                         </div>
                     </div>
@@ -238,7 +239,7 @@
                         <div class="col-md-6 col-lg-3 col-sm-6">
                             <div class="ft__widget">
                                 <div class="ft__logo">
-                                    <a href="index.html">
+                                    <a asp-controller="Home" asp-action="Index">
                                         <img src="~/assets/images/logo/uniqlo.png" alt="footer logo">
                                     </a>
                                 </div>

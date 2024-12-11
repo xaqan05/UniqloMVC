@@ -67,7 +67,31 @@ namespace UniqloMVC.Controllers
             }
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Details), new {Id = productId});
+            return RedirectToAction(nameof(Details), new { Id = productId });
+        }
+
+        public async Task<IActionResult> Comment(int productId, string content)
+        {
+            string userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)!.Value;
+            var data = await _context.Comments.Where(x => x.UserId == userId && x.ProductId == productId).FirstOrDefaultAsync();
+
+            if (data is null)
+            {
+                await _context.Comments.AddAsync(new Models.Comment
+                {
+                    UserId = userId,
+                    ProductId = productId,
+                    Content = content
+                });
+            }
+            else
+            {
+                data.Content = content;
+            }
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Details), new { Id = productId });
         }
     }
 }

@@ -81,7 +81,7 @@ namespace UniqloMVC.Areas.Admin.Controllers
 
             List<ProductImage> images = [];
 
-            foreach (var item in vm.OtherFiles)
+            foreach (var item in vm.OtherFiles ?? [])
             {
                 string fileName = await item.UploadAsync(_env.WebRootPath, "imgs", "products");
                 images.Add(new ProductImage

@@ -22,7 +22,7 @@ namespace UniqloMVC.ViewModels.Product
         public int Discount { get; set; }
         public string CoverFileUrl { get; set; } = null!;
 
-        public IEnumerable<string> OtherFileUrls { get; set; }
+        public IEnumerable<string>? OtherFileUrls { get; set; }
         public IFormFile? CoverFile { get; set; }
 
         public int? CategoryId { get; set; }

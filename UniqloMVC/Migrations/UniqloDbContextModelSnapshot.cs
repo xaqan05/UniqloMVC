@@ -193,6 +193,40 @@ namespace UniqloMVC.Migrations
                     b.ToTable("Categories");
                 });
 
+            modelBuilder.Entity("UniqloMVC.Models.Comment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Content")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedTime")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Comments");
+                });
+
             modelBuilder.Entity("UniqloMVC.Models.Product", b =>
                 {
                     b.Property<int>("Id")
@@ -493,6 +527,25 @@ namespace UniqloMVC.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("UniqloMVC.Models.Comment", b =>
+                {
+                    b.HasOne("UniqloMVC.Models.Product", "Product")
+                        .WithMany("Comments")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("UniqloMVC.Models.User", "User")
+                        .WithMany("Comments")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("UniqloMVC.Models.Product", b =>
                 {
                     b.HasOne("UniqloMVC.Models.Category", "Category")
@@ -535,9 +588,16 @@ namespace UniqloMVC.Migrations
 
             modelBuilder.Entity("UniqloMVC.Models.Product", b =>
                 {
+                    b.Navigation("Comments");
+
                     b.Navigation("Images");
 
                     b.Navigation("Rating");
+                });
+
+            modelBuilder.Entity("UniqloMVC.Models.User", b =>
+                {
+                    b.Navigation("Comments");
                 });
 #pragma warning restore 612, 618
         }

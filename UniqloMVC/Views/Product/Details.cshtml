@@ -204,7 +204,7 @@
                             <!-- Start Single Review -->
                             <div class="pro__review">
                                 <div class="review__thumb">
-                                    <img src="images/review/1.jpg" alt="review images">
+                                    <img src="~/assets/images/review/1.jpg" alt="review images">
                                 </div>
                                 <div class="review__details">
                                     <div class="review__info">
@@ -326,12 +326,11 @@
 </section>
 @section scripts {
     <script>
-        // Küçük ürün resmine tıklandığında büyük resim değişiyor
         document.querySelectorAll(".product__small__images img").forEach(img => {
             img.addEventListener("click", function () {
                 const bigImage = document.querySelector(".product__big__images img");
                 if (bigImage) {
-                    bigImage.src = this.src; // Tıklanan küçük resmin kaynağını büyük resme ata
+                    bigImage.src = this.src; 
                 }
             });
         });

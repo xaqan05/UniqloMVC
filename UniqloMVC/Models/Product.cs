@@ -23,5 +23,7 @@
         public ICollection<Tag>? Tags { get; set; }
 
         public ICollection<ProductRating> Rating { get; set; }
+
+        public ICollection<Comment> Comments { get; set; }
     }
 }
