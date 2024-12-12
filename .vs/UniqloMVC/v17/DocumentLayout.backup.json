@@ -3,40 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\views\\product\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\viewmodels\\comment\\commentcreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\viewmodels\\comment\\commentcreatevm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\controllers\\resetpasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\controllers\\resetpasswordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\viewmodels\\slider\\slideritemvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\viewmodels\\slider\\slideritemvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\views\\resetpassword\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\views\\resetpassword\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\views\\resetpassword\\verifycode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\views\\resetpassword\\verifycode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\views\\resetpassword\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\views\\resetpassword\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\viewmodels\\resetpassword\\resetpasswordvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\viewmodels\\resetpassword\\resetpasswordvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|c:\\users\\user\\desktop\\programming\\c#\\uniqlomvc\\uniqlomvc\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA9ABEF0-DA16-4D1D-AB08-27DD10CEB2D7}|UniqloMVC\\UniqloMVC.csproj|solutionrelative:uniqlomvc\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,118 +46,93 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SliderItemVM.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\ViewModels\\Slider\\SliderItemVM.cs",
-              "RelativeDocumentMoniker": "UniqloMVC\\ViewModels\\Slider\\SliderItemVM.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\ViewModels\\Slider\\SliderItemVM.cs*",
-              "RelativeToolTip": "UniqloMVC\\ViewModels\\Slider\\SliderItemVM.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T22:36:39.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ChangePassword.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\ResetPassword\\ChangePassword.cshtml",
-              "RelativeDocumentMoniker": "UniqloMVC\\Views\\ResetPassword\\ChangePassword.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\ResetPassword\\ChangePassword.cshtml",
-              "RelativeToolTip": "UniqloMVC\\Views\\ResetPassword\\ChangePassword.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADMAAABBAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "UniqloMVC\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "UniqloMVC\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAuwA8BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-11T22:30:09.353Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ResetPasswordVM.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\ViewModels\\ResetPassword\\ResetPasswordVM.cs",
-              "RelativeDocumentMoniker": "UniqloMVC\\ViewModels\\ResetPassword\\ResetPasswordVM.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\ViewModels\\ResetPassword\\ResetPasswordVM.cs",
-              "RelativeToolTip": "UniqloMVC\\ViewModels\\ResetPassword\\ResetPasswordVM.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T21:31:43.835Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ResetPasswordController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Controllers\\ResetPasswordController.cs",
-              "RelativeDocumentMoniker": "UniqloMVC\\Controllers\\ResetPasswordController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Controllers\\ResetPasswordController.cs",
-              "RelativeToolTip": "UniqloMVC\\Controllers\\ResetPasswordController.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAcwG4AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T20:43:01.953Z",
+              "WhenOpened": "2024-12-12T15:20:18.424Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "VerifyCode.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\ResetPassword\\VerifyCode.cshtml",
-              "RelativeDocumentMoniker": "UniqloMVC\\Views\\ResetPassword\\VerifyCode.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\ResetPassword\\VerifyCode.cshtml",
-              "RelativeToolTip": "UniqloMVC\\Views\\ResetPassword\\VerifyCode.cshtml",
-              "ViewState": "AgIAADkAAAAAAAAAAAAqwFgAAAAAAAAAAAAAAA==",
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "UniqloMVC\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "UniqloMVC\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T15:20:03.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Product\\Details.cshtml",
+              "RelativeDocumentMoniker": "UniqloMVC\\Views\\Product\\Details.cshtml",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Product\\Details.cshtml*",
+              "RelativeToolTip": "UniqloMVC\\Views\\Product\\Details.cshtml*",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAAANwAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-11T21:11:40.387Z",
+              "WhenOpened": "2024-12-12T14:11:11.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "UniqloMVC\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "UniqloMVC\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAIwBIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T13:59:03.391Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CommentCreateVM.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\ViewModels\\Comment\\CommentCreateVM.cs",
+              "RelativeDocumentMoniker": "UniqloMVC\\ViewModels\\Comment\\CommentCreateVM.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\ViewModels\\Comment\\CommentCreateVM.cs",
+              "RelativeToolTip": "UniqloMVC\\ViewModels\\Comment\\CommentCreateVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-12T14:02:22.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Models\\User.cs",
-              "RelativeDocumentMoniker": "UniqloMVC\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Models\\User.cs",
-              "RelativeToolTip": "UniqloMVC\\Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA2AAAAAAAAAA==",
+              "Title": "Comment.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Models\\Comment.cs",
+              "RelativeDocumentMoniker": "UniqloMVC\\Models\\Comment.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Models\\Comment.cs",
+              "RelativeToolTip": "UniqloMVC\\Models\\Comment.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T21:05:14.454Z",
+              "WhenOpened": "2024-12-12T14:01:40.65Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ForgotPassword.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\ResetPassword\\ForgotPassword.cshtml",
-              "RelativeDocumentMoniker": "UniqloMVC\\Views\\ResetPassword\\ForgotPassword.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\ResetPassword\\ForgotPassword.cshtml",
-              "RelativeToolTip": "UniqloMVC\\Views\\ResetPassword\\ForgotPassword.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADkAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-11T20:55:12.697Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "UniqloMVC\\Views\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Views\\Account\\Login.cshtml",
-              "RelativeToolTip": "UniqloMVC\\Views\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-12-11T20:51:06.586Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Program.cs",
-              "RelativeDocumentMoniker": "UniqloMVC\\Program.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Program.cs",
-              "RelativeToolTip": "UniqloMVC\\Program.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAmwB8AAABaAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "ResetPasswordController.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Controllers\\ResetPasswordController.cs",
+              "RelativeDocumentMoniker": "UniqloMVC\\Controllers\\ResetPasswordController.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\Programming\\C#\\UniqloMVC\\UniqloMVC\\Controllers\\ResetPasswordController.cs",
+              "RelativeToolTip": "UniqloMVC\\Controllers\\ResetPasswordController.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowGcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-11T20:37:34.676Z",
+              "WhenOpened": "2024-12-12T13:46:10.843Z",
               "EditorCaption": ""
             }
           ]

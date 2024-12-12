@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using UniqloMVC.DataAcces;
+using UniqloMVC.Models;
+using UniqloMVC.ViewModels.Comment;
 using UniqloMVC.ViewModels.Product;
 
 namespace UniqloMVC.Controllers
@@ -72,28 +75,46 @@ namespace UniqloMVC.Controllers
             return RedirectToAction(nameof(Details), new { Id = productId });
         }
 
-        public async Task<IActionResult> Comment(int productId, string content)
+        public async Task<IActionResult> Comment(int productId, CommentCreateVM vm)
         {
             string userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)!.Value;
+
             var data = await _context.Comments.Where(x => x.UserId == userId && x.ProductId == productId).FirstOrDefaultAsync();
 
-            if (data is null)
+
+            Comment comment = new Comment
             {
-                await _context.Comments.AddAsync(new Models.Comment
-                {
-                    UserId = userId,
-                    ProductId = productId,
-                    Content = content
-                });
-            }
-            else
-            {
-                data.Content = content;
-            }
+                Content = vm.Content,
+                FullName = vm.FullName,
+                Email = vm.Email,
+                ProductId = productId,
+                UserId = userId,
+            };
+
+            await _context.Comments.AddAsync(comment);
 
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Details), new { Id = productId });
+        }
+
+
+        public async Task<IActionResult> RemoveComment(int? id)
+        {
+            if (!id.HasValue) return BadRequest();
+            string userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)!.Value;
+
+            var data = await _context.Comments.FindAsync(id);
+
+            ViewBag.UserId = userId;
+
+            if (data is null) return NotFound();
+            
+            _context.Comments.Remove(data);
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Details), new { Id = data.ProductId });
         }
     }
 }

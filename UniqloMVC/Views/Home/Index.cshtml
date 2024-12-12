@@ -7,7 +7,7 @@
 <!-- Start Slider Area -->
 <div class="slider__container slider--four">
     <div class="slider__activation__wrap owl-carousel owl-theme">
-        @foreach(var item in Model.Sliders)
+        @foreach (var item in Model.Sliders)
         {
             <div class="slide slider__fixed--height" style="background: rgba(0, 0, 0, 0) url(../imgs/sliders/@item.ImageUrl) no-repeat scroll center center / cover ;">
                 <div class="container">
@@ -27,7 +27,7 @@
                 </div>
             </div>
         }
-        
+
     </div>
 </div>
 <!-- Start Slider Area -->
@@ -136,32 +136,32 @@
                     <div class="col-md-12">
                         <div class="popular__product__container product__list clearfix">
                             <!-- Start Single Product -->
-                            @foreach(var item in Model.Products)
+                            @foreach (var item in Model.Products)
                             {
-                            <div class="single__pro cat--2 cat--4">
-                                <div class="product">
-                                    <div class="product__inner">
-                                        <div class="pro__thumb">
-                                            <a asp-action="Details" asp-controller="Product" asp-route-id=@item.Id>
-                                                <img src="~/imgs/products/@item.ImageUrl" alt="product images">
-                                            </a>
+                                <div class="single__pro cat--2 cat--4">
+                                    <div class="product">
+                                        <div class="product__inner">
+                                            <div class="pro__thumb">
+                                                <a asp-action="Details" asp-controller="Product" asp-route-id=@item.Id>
+                                                    <img src="~/imgs/products/@item.ImageUrl" alt="product images">
+                                                </a>
+                                            </div>
+                                            <div class="popular__product__hover__info">
+                                                <ul class="product__action">
+                                                    <li><a title="Add To Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
+                                                    <li><a data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
+                                                    <li><a title="Add To Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div class="popular__product__hover__info">
-                                            <ul class="product__action">
-                                                <li><a title="Add To Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
-                                                <li><a data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                <li><a title="Add To Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
-                                            </ul>
+                                        <div class="product__details">
+                                            <h2><a asp-controller="Product" asp-action="Details" asp-route-id=@item.Id>@item.Name</a></h2>
+                                            <span class="popular__pro__prize">@item.Price</span>
                                         </div>
-                                    </div>
-                                    <div class="product__details">
-                                        <h2><a asp-controller="Product" asp-action="Details" asp-route-id=@item.Id>@item.Name</a></h2>
-                                        <span class="popular__pro__prize">@item.Price</span>
                                     </div>
                                 </div>
-                            </div>    
                             }
-                            
+
                         </div>
                     </div>
                 </div>
@@ -169,7 +169,7 @@
         </div>
     </div>
     <!-- Start Footer Area -->
-    
+
 </div>
     </div>
 <!-- Body main wrapper end -->
@@ -268,5 +268,4 @@
 <script src="~/assets/js/plugins.js"></script>
 <!-- Main js file that contents all jQuery plugins activation. -->
 <script src="~/assets/js/main.js"></script>
-
 
