@@ -82,7 +82,7 @@ namespace UniqloMVC.Controllers
         public async Task<IActionResult> VerifyCode(VerifyCodeVM vm)
         {
             var userEmail = HttpContext.Session.GetString("UserEmail");
-            if ((userEmail is null)) return RedirectToAction(nameof(ForgotPassword));
+            if (userEmail is null) return RedirectToAction(nameof(ForgotPassword));
             
             if(!ModelState.IsValid) return View();
 
@@ -112,6 +112,8 @@ namespace UniqloMVC.Controllers
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Email == userEmail);
             var token = await _userManager.GeneratePasswordResetTokenAsync(user);
             await _userManager.ResetPasswordAsync(user, token, password);
+            HttpContext.Session.Remove("UserEmail");
+
 
             return View();
         }

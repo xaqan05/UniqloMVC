@@ -2,8 +2,10 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using System.Text.Json;
 using UniqloMVC.DataAcces;
 using UniqloMVC.Models;
+using UniqloMVC.ViewModels.Basket;
 using UniqloMVC.ViewModels.Comment;
 using UniqloMVC.ViewModels.Product;
 
@@ -109,12 +111,37 @@ namespace UniqloMVC.Controllers
             ViewBag.UserId = userId;
 
             if (data is null) return NotFound();
-            
+
             _context.Comments.Remove(data);
 
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Details), new { Id = data.ProductId });
+        }
+
+        public async Task<IActionResult> AddBasket(int id)
+        {
+            if (!await _context.Products.AnyAsync(x => x.Id == id))
+                return NotFound();
+
+            var basketItems = JsonSerializer.Deserialize<List<BasketProductItemVM>>(Request.Cookies["basket"] ?? "[]");
+
+            var item = basketItems.FirstOrDefault(x => x.Id == id);
+
+            if (item is null)
+            {
+                item = new BasketProductItemVM
+                {
+                    Id = id,
+                    Count = 1
+                };
+                basketItems.Add(item);
+            }
+            item.Count++;
+
+            Response.Cookies.Append("basket", JsonSerializer.Serialize(basketItems));
+
+            return View();
         }
     }
 }

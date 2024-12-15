@@ -3,7 +3,9 @@
     Layout = "_Layout";
     ViewData["Title"] = "Home";
 }
-
+@section styles {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+}
 <!-- Start Slider Area -->
 <div class="slider__container slider--four">
     <div class="slider__activation__wrap owl-carousel owl-theme">
@@ -150,7 +152,7 @@
                                                 <ul class="product__action">
                                                     <li><a title="Add To Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                     <li><a data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                    <li><a title="Add To Cart" href="cart.html"><span class="ti-shopping-cart"></span></a></li>
+                                                    <li prod-id="@item.Id" style="color:red;cursor:pointer" class="add-cart"><span class="ti-shopping-cart"></span></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -257,15 +259,35 @@
     <!-- END Modal -->
 </div>
 <!-- END QUICKVIEW PRODUCT -->
-<!-- Placed js at the end of the document so the pages load faster -->
-<!-- jquery latest version -->
-<script src="~/assets/js/vendor/jquery-3.6.0.min.js"></script>
-<script src="~/assets/js/vendor/jquery-migrate-3.3.2.min.js"></script>
-<script src="~/assets/js/vendor/jquery.waypoints.js"></script>
-<!-- Bootstrap Framework js -->
-<script src="~/assets/js/bootstrap.bundle.min.js"></script>
-<!-- All js plugins included in this file. -->
-<script src="~/assets/js/plugins.js"></script>
-<!-- Main js file that contents all jQuery plugins activation. -->
-<script src="~/assets/js/main.js"></script>
+@section scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $('.add-cart').click(function(){
+            fetch('Product/AddBasket/' + $(this).attr('prod-id'))
+            .then(x=> {
+                if(x.ok){
+                            Command: toastr["success"]("Məhsul səbətə əlavə olundu.")
+
+        toastr.options = {
+          "closeButton": false,
+          "debug": false,
+          "newestOnTop": false,
+          "progressBar": false,
+          "positionClass": "toast-top-right",
+          "preventDuplicates": false,
+          "onclick": null,
+          "showDuration": "300",
+          "hideDuration": "1000",
+          "timeOut": "3000",
+          "extendedTimeOut": "1000",
+          "showEasing": "swing",
+          "hideEasing": "linear",
+          "showMethod": "fadeIn",
+          "hideMethod": "fadeOut"
+        }
+                }
+            })
+        })
+    </script>
+}
 
