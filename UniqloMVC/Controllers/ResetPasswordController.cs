@@ -59,24 +59,16 @@ namespace UniqloMVC.Controllers
 
             MailAddress from = new MailAddress("xaganmi-bp215@code.edu.az", "Uniqlo");
 
-            MailAddress to = new("ruslanmm-bcf202@code.edu.az");
-
-            //MailMessage message = new MailMessage(from, to)
-            //{
-            //    Subject = "Verification Code",
-            //    Body = $"Sizin dogrulama kodunuz: {user.VerificationCode}"
-            //};
+            MailAddress to = new(user.Email);
 
             MailMessage message = new MailMessage(from, to)
             {
-                Subject = "Ad gunuvu yedim",
-                Body = $"beyzer"
+                Subject = "Verification Code",
+                Body = $"Sizin dogrulama kodunuz: {user.VerificationCode}"
             };
-            for (int i = 0; i < 10; i++)
-            {
-                smtp.Send(message);
 
-            }
+            smtp.Send(message);
+
             HttpContext.Session.SetString("UserEmail", user.Email);
 
             return RedirectToAction(nameof(VerifyCode));

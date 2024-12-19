@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
@@ -53,7 +54,8 @@ namespace UniqloMVC.Controllers
 
             return View(data);
         }
-
+        
+        [Authorize]
         public async Task<IActionResult> Rating(int productId, int rating)
         {
             string userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)!.Value;
@@ -77,6 +79,8 @@ namespace UniqloMVC.Controllers
             return RedirectToAction(nameof(Details), new { Id = productId });
         }
 
+        
+        [Authorize]
         public async Task<IActionResult> Comment(int productId, CommentCreateVM vm)
         {
             string userId = User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)!.Value;
@@ -100,7 +104,8 @@ namespace UniqloMVC.Controllers
             return RedirectToAction(nameof(Details), new { Id = productId });
         }
 
-
+        
+        [Authorize]
         public async Task<IActionResult> RemoveComment(int? id)
         {
             if (!id.HasValue) return BadRequest();
@@ -119,29 +124,5 @@ namespace UniqloMVC.Controllers
             return RedirectToAction(nameof(Details), new { Id = data.ProductId });
         }
 
-        public async Task<IActionResult> AddBasket(int id)
-        {
-            if (!await _context.Products.AnyAsync(x => x.Id == id))
-                return NotFound();
-
-            var basketItems = JsonSerializer.Deserialize<List<BasketProductItemVM>>(Request.Cookies["basket"] ?? "[]");
-
-            var item = basketItems.FirstOrDefault(x => x.Id == id);
-
-            if (item is null)
-            {
-                item = new BasketProductItemVM
-                {
-                    Id = id,
-                    Count = 1
-                };
-                basketItems.Add(item);
-            }
-            item.Count++;
-
-            Response.Cookies.Append("basket", JsonSerializer.Serialize(basketItems));
-
-            return View();
-        }
     }
 }
