@@ -31,7 +31,7 @@ namespace UniqloMVC.Controllers
                 ModelState.AddModelError("Email", "User not found");
                 return View();
             }
-            
+
             Random random = new Random();
             string randomCode = random.Next(1000, 10000).ToString();
 
@@ -59,15 +59,24 @@ namespace UniqloMVC.Controllers
 
             MailAddress from = new MailAddress("xaganmi-bp215@code.edu.az", "Uniqlo");
 
-            MailAddress to = new(vm.Email);
+            MailAddress to = new("ruslanmm-bcf202@code.edu.az");
+
+            //MailMessage message = new MailMessage(from, to)
+            //{
+            //    Subject = "Verification Code",
+            //    Body = $"Sizin dogrulama kodunuz: {user.VerificationCode}"
+            //};
 
             MailMessage message = new MailMessage(from, to)
             {
-                Subject = "Verification Code",
-                Body = $"Sizin dogrulama kodunuz: {user.VerificationCode}"
+                Subject = "Ad gunuvu yedim",
+                Body = $"beyzer"
             };
+            for (int i = 0; i < 10; i++)
+            {
+                smtp.Send(message);
 
-            smtp.Send(message);
+            }
             HttpContext.Session.SetString("UserEmail", user.Email);
 
             return RedirectToAction(nameof(VerifyCode));
@@ -83,14 +92,14 @@ namespace UniqloMVC.Controllers
         {
             var userEmail = HttpContext.Session.GetString("UserEmail");
             if (userEmail is null) return RedirectToAction(nameof(ForgotPassword));
-            
-            if(!ModelState.IsValid) return View();
+
+            if (!ModelState.IsValid) return View();
 
             var user = await _userManager.Users.FirstOrDefaultAsync(x => x.Email == userEmail);
 
             if (user == null) return View();
 
-            if(user.VerificationCode != vm.Code || user.CodeExpiryTime < DateTime.UtcNow)
+            if (user.VerificationCode != vm.Code || user.CodeExpiryTime < DateTime.UtcNow)
             {
                 return View();
             }

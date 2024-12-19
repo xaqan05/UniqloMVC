@@ -13,11 +13,12 @@ namespace UniqloMVC.ViewComponents
             var basketIds = JsonSerializer.Deserialize<List<BasketProductItemVM>>(Request.Cookies["basket"] ?? "[]");
 
             var products = await _context.Products
-                .Where(x => basketIds!
-                .Select(x => x.Id).Any(y => y == x.Id))
+                .Where(x => basketIds!.Select(y => y.Id)
+                .Any(y => y == x.Id))
                 .Select(x => new ProductBasketItemVM
                 {
                     Id = x.Id,
+                    Name = x.Name,
                     Discount = x.Discount,
                     ImageUrl = x.CoverImage,
                     SellPrice = x.SellPrice

@@ -152,7 +152,7 @@
                                                 <ul class="product__action">
                                                     <li><a title="Add To Wishlist" href="wishlist.html"><span class="ti-heart"></span></a></li>
                                                     <li><a data-bs-toggle="modal" data-bs-target="#productModal" title="Quick View" class="quick-view modal-view detail-link" href="#"><span class="ti-plus"></span></a></li>
-                                                    <li prod-id="@item.Id" style="color:red;cursor:pointer" class="add-cart"><span class="ti-shopping-cart"></span></li>
+                                                    <li prod-id="@item.Id" style="cursor:pointer" class="add-cart"><span class="ti-shopping-cart"></span></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -268,7 +268,7 @@
                 if(x.ok){
                             Command: toastr["success"]("Məhsul səbətə əlavə olundu.")
 
-        toastr.options = {
+                    toastr.options = {
           "closeButton": false,
           "debug": false,
           "newestOnTop": false,
